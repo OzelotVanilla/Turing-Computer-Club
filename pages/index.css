@@ -1,0 +1,81 @@
+main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: max(2vh, 15px) 0px;
+
+    width: 90%;
+}
+
+main > *
+{
+    width: 100%;
+}
+
+#slideshow_area
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#slideshow_hover_text
+{
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: "Raleway";
+    color: #ffffff;
+    text-shadow: #000000 0px 0px 0.8rem;
+}
+
+#slideshow_hover_text h1
+{
+    font-size: 5rem;
+}
+
+#slideshow_hover_text h3
+{
+    font-size: 1.5rem;
+}
+
+#creativity_banner
+{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+
+
+    font-family: "Raleway";
+}
+
+#creativity_banner h1
+{
+    margin-top: 0px;
+    font-size: 3rem;
+}
+
+#creativity_banner p
+{
+    font-size: 1.2rem;
+}
+
+#news_showcase
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: max(1vh, 15px);
+}
+
+#news_showcase > h1
+{
+    font-family: "Roboto";
+    font-size: 2.5rem;
+}
