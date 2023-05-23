@@ -7,5 +7,6 @@ export default defineNuxtConfig({
         "components": components_dir,
         "@": components_dir,
         "style": style_dir,
-    }
+    },
+    ssr: true
 })

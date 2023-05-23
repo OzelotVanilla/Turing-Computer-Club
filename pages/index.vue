@@ -3,6 +3,7 @@ import tcc_header from "components/tcc_header.vue"
 import slideshow from "components/slideshow.vue"
 import colored_squares from "components/colored_squares.vue"
 import news_capsule from "components/news_capsule.vue"
+import staff_capsule from "components/staff_capsule.vue"
 
 import { DefaultLanguage, LanguageAvailable, LanguageOption } from "~/assets/i18n"
 import club_text from "~/assets/tcc_setting/tcc_text"
@@ -20,7 +21,8 @@ export default {
         tcc_header,
         slideshow,
         colored_squares,
-        news_capsule
+        news_capsule,
+        staff_capsule
     },
     data()
     {
@@ -68,7 +70,8 @@ export default {
                 </div>
             </div>
             <div id="news_showcase">
-                <h1>{{ page_text_translated.news_pickup_text }}</h1>
+                <h1 class="section_title">{{ page_text_translated.news_pickup_text }}</h1>
+                <p>{{ page_text_translated.news_pickup_area_description }}</p>
                 <news_capsule news_title="Test" pic_path="/news/school_hiking/image/header_pic.jpg" pic_size="200px">
                     Sample Text.
                 </news_capsule>
@@ -81,6 +84,14 @@ export default {
                 <news_capsule news_title="Test" pic_path="/news/school_hiking/image/header_pic.jpg" pic_size="200px">
                     Sample Text.
                 </news_capsule>
+            </div>
+            <div id="staff_showcase" class="flex_col">
+                <h1 class="section_title">{{ page_text_translated.member_text }}</h1>
+                <div class="flex_row" id="staff_list">
+                    <staff_capsule staff_id="ozelotvanilla" />
+                    <staff_capsule staff_id="ozelotvanilla" />
+                    <staff_capsule staff_id="ozelotvanilla" />
+                </div>
             </div>
         </main>
     </div>

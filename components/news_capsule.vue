@@ -10,7 +10,7 @@ export default {
     {
         return {
             news_pic_path: this.pic_path ?? "",
-            pic_size: this.pic_size ?? "100px",
+            img_size_style_text: this.pic_size ?? "100px",
             news_text_slot: this.news_text ?? "Sample Text"
         }
     }
@@ -20,7 +20,8 @@ export default {
 <template>
     <div id="news_capsule_frame" class="flex_row">
         <div class="pic_area">
-            <img class="header_pic" :src="pic_path" alt="News Picture" :style="{ width: pic_size, height: pic_size }">
+            <img class="header_pic" :src="pic_path" alt="News Picture"
+                :style="{ width: img_size_style_text, height: img_size_style_text }">
         </div>
         <div class="text_area flex_col">
             <h1>{{ news_title }}</h1>

@@ -15,12 +15,7 @@ export let lang: LanguageAvailable = "en";
 export default {
     props: {
         lang_selected: String
-    },
-    mounted()
-    {
-        lang = (localStorage.getItem("app_lang") ?? default_language) as LanguageAvailable
-        localStorage.setItem("app_lang", lang)
-    },
+    }
 }
 </script>
 
