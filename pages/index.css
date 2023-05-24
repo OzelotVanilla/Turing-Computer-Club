@@ -95,4 +95,10 @@ main > *
 #staff_list
 {
     gap: 4vw;
+    justify-content: center;
+}
+
+#words_from_advisor
+{
+    font-family: "Roboto";
 }

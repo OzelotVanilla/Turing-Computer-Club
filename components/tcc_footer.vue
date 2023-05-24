@@ -4,4 +4,29 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+    <div id="tcc_footer_frame" class="flex_col">
+        <p>Turing Computer Club, Wenzhou Kean University. 2023.</p>
+    </div>
+</template>
+
+<style scoped>
+@import "~/assets/style/common.css";
+
+*
+{
+    margin: 0px;
+}
+
+#tcc_footer_frame
+{
+    align-items: center;
+
+    width: 100%;
+    padding: 2vh 0px;
+
+    background-color: #ebf6f7;
+
+    font-family: "Raleway";
+}
+</style>

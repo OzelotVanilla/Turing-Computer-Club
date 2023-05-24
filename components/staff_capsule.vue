@@ -6,14 +6,7 @@ interface StaffCapsuleInfo extends StaffInfo
     icon_path: string
 }
 
-const dir_of_staff = "~/assets/staff/"
 const dir_of_fallback_icon = "_nuxt/assets/staff/fallback_icon.jpg"
-const empty_staff_info: StaffCapsuleInfo = {
-    name: "",
-    self_introduction: "",
-    major: StudentMajor.computer_science,
-    icon_path: dir_of_fallback_icon
-}
 
 export default {
     props: {
@@ -23,6 +16,13 @@ export default {
     data()
     {
         if (this.staff_id == undefined) { console.error("Must set a valid staff id.") }
+
+        const empty_staff_info: StaffCapsuleInfo = {
+            name: "",
+            self_introduction: "",
+            major: StudentMajor.computer_science,
+            icon_path: dir_of_fallback_icon
+        }
 
         return {
             staff_info: empty_staff_info
@@ -35,7 +35,7 @@ export default {
     methods: {
         updateStaffInfo()
         {
-            getStaffInfo(this.staff_id?.toLocaleLowerCase()).then(
+            this.getStaffInfo(this.staff_id?.toLocaleLowerCase()).then(
                 (info_got) =>
                 {
                     this.staff_info.name = info_got.name
@@ -44,17 +44,14 @@ export default {
                     this.staff_info.icon_path = info_got.icon_path ?? dir_of_fallback_icon
                 }
             )
+        },
+        async getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleInfo>
+        {
+            const { data } = await useFetch(`/api/staff?id=${staff_id}`)
+            return JSON.parse(data.value!)
         }
     }
 }
-
-async function getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleInfo>
-{
-    const { data } = await useFetch(`/api/staff?id=${staff_id}`)
-    return JSON.parse(data.value!)
-}
-
-
 </script>
 
 <template>
@@ -63,7 +60,9 @@ async function getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleI
         <!-- <div id="staff_icon"></div> -->
         <h1>{{ staff_info.name }}</h1>
         <h4>{{ staff_info.major }}</h4>
-        <p>{{ staff_info.self_introduction }}</p>
+        <div id="self_intro" class="flex_col">
+            <p v-for="paragraph in staff_info.self_introduction.split('\n')">{{ paragraph }}</p>
+        </div>
     </div>
 </template>
 
@@ -73,6 +72,7 @@ async function getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleI
 *
 {
     margin: 0px;
+    font-family: "Roboto";
 }
 
 #staff_capsule_frame
@@ -81,12 +81,10 @@ async function getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleI
     --border-radius-size: 20px;
 
     align-items: center;
-    /* justify-content: center; */
     gap: max(1vh, 15px);
 
     width: min(25vw, 1000px);
-    height: min(40vh, 500px);
-    padding: max(2vh, 30px) 0px;
+    padding: max(3vh, 45px) 0px;
 
     background-color: #f3f3f3;
     border-radius: var(--border-radius-size);
@@ -103,6 +101,20 @@ async function getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleI
 {
     width: max(6vw, 80px);
     height: max(6vw, 80px);
-    background-image: url();
+
+    border-radius: 50%;
+}
+
+#self_intro
+{
+    align-items: center;
+}
+
+#self_intro > p
+{
+    margin-top: 5%;
+    width: 80%;
+    text-indent: 2rem;
+    text-align: justify;
 }
 </style>

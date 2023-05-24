@@ -64,6 +64,8 @@
 
     font-family: "Raleway";
     font-weight: 400;
+
+    transition: all 0.3s;
 }
 
 .page_nav_text:hover
@@ -85,6 +87,8 @@
 
     font-family: "Raleway";
     font-weight: 400;
+
+    transition: all 0.3s;
 }
 
 .lang_option_text:hover

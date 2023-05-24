@@ -23,12 +23,15 @@ export default {
             <img class="header_pic" :src="pic_path" alt="News Picture"
                 :style="{ width: img_size_style_text, height: img_size_style_text }">
         </div>
-        <div class="text_area flex_col">
+        <div class="text_area flex_col" style="margin-right: auto;">
             <h1>{{ news_title }}</h1>
             <p>
                 <slot>{{ news_text_slot }}</slot>
             </p>
         </div>
+        <a id="view_more">
+            View More
+        </a>
     </div>
 </template>
 
@@ -55,6 +58,19 @@ export default {
 {
     translate: var(--shadow-offset-distance) var(--shadow-offset-distance);
     box-shadow: none;
+}
+
+#view_more
+{
+    font-family: "Raleway";
+    align-self: flex-end;
+    transition: color 0.3s;
+}
+
+#view_more:hover
+{
+    color: #007bbb;
+    cursor: pointer;
 }
 
 .header_pic

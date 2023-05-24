@@ -1,5 +1,6 @@
 <script lang="ts">
 import tcc_header from "components/tcc_header.vue"
+import tcc_footer from "components/tcc_footer.vue"
 import slideshow from "components/slideshow.vue"
 import colored_squares from "components/colored_squares.vue"
 import news_capsule from "components/news_capsule.vue"
@@ -22,7 +23,8 @@ export default {
         slideshow,
         colored_squares,
         news_capsule,
-        staff_capsule
+        staff_capsule,
+        tcc_footer
     },
     data()
     {
@@ -93,6 +95,14 @@ export default {
                     <staff_capsule staff_id="ozelotvanilla" />
                 </div>
             </div>
+            <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
+                <h1 class="section_title">{{ page_text_translated.advisor_text }}</h1>
+                <div class="flex_row" style="gap: 5vw;">
+                    <staff_capsule staff_id="hemnbarzanabdalla" />
+                    <p>{{ page_text_translated.advisor_words }}</p>
+                </div>
+            </div>
         </main>
+        <tcc_footer />
     </div>
 </template>

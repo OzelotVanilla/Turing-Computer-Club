@@ -17,5 +17,6 @@ export default {
         <nav>
             <tcc_header />
         </nav>
+        <tcc_footer />
     </div>
 </template>
