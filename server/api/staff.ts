@@ -1,12 +1,11 @@
 import { readFileSync, existsSync as isExists } from "fs"
 
-
 const dir_of_staff = "assets/staff"
 
 export default defineEventHandler(
     function (event)
     {
-        let params = getQuery(event)
+        const params = getQuery(event)
         const staff_id = params.id as string
         const staff_path = `${dir_of_staff}/${staff_id}`
         const json_file_to_read = `${dir_of_staff}/${staff_id}/info.json`

@@ -24,6 +24,7 @@ export default {
 
     width: 100%;
     padding: 2vh 0px;
+    margin-top: 4vh;
 
     background-color: #ebf6f7;
 

@@ -71,6 +71,21 @@ export default {
                     <p>{{ club_text_translated.creativity_text }}</p>
                 </div>
             </div>
+            <div id="staff_showcase" class="flex_col">
+                <h1 class="section_title">{{ page_text_translated.member_text }}</h1>
+                <div class="flex_row" id="staff_list">
+                    <staff_capsule staff_id="ozelotvanilla" />
+                    <staff_capsule staff_id="ozelotvanilla" />
+                    <staff_capsule staff_id="ozelotvanilla" />
+                </div>
+            </div>
+            <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
+                <h1 class="section_title">{{ page_text_translated.advisor_text }}</h1>
+                <div class="flex_row" style="gap: 5vw;">
+                    <staff_capsule staff_id="hemnbarzanabdalla" />
+                    <p>{{ page_text_translated.advisor_words }}</p>
+                </div>
+            </div>
             <div id="news_showcase">
                 <h1 class="section_title">{{ page_text_translated.news_pickup_text }}</h1>
                 <p>{{ page_text_translated.news_pickup_area_description }}</p>
@@ -87,20 +102,9 @@ export default {
                     Sample Text.
                 </news_capsule>
             </div>
-            <div id="staff_showcase" class="flex_col">
-                <h1 class="section_title">{{ page_text_translated.member_text }}</h1>
-                <div class="flex_row" id="staff_list">
-                    <staff_capsule staff_id="ozelotvanilla" />
-                    <staff_capsule staff_id="ozelotvanilla" />
-                    <staff_capsule staff_id="ozelotvanilla" />
-                </div>
-            </div>
-            <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
-                <h1 class="section_title">{{ page_text_translated.advisor_text }}</h1>
-                <div class="flex_row" style="gap: 5vw;">
-                    <staff_capsule staff_id="hemnbarzanabdalla" />
-                    <p>{{ page_text_translated.advisor_words }}</p>
-                </div>
+            <div id="join_us">
+                <h1 class="section_title">{{ page_text_translated.join_us_text }}</h1>
+
             </div>
         </main>
         <tcc_footer />

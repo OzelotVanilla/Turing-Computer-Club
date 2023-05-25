@@ -80,10 +80,13 @@ export default {
     --shadow-offset-distance: 10px;
     --border-radius-size: 20px;
 
+    --frame-width: min(25vw, 1000px);
+
     align-items: center;
     gap: max(1vh, 15px);
 
-    width: min(25vw, 1000px);
+    width: var(--frame-width);
+    max-height: calc(var(--frame-width) * 1.5);
     padding: max(3vh, 45px) 0px;
 
     background-color: #f3f3f3;
@@ -114,7 +117,10 @@ export default {
 {
     margin-top: 5%;
     width: 80%;
+    max-height: 40%;
+
     text-indent: 2rem;
     text-align: justify;
+    text-overflow: ellipsis;
 }
 </style>
