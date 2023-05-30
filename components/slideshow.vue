@@ -47,12 +47,12 @@ export default {
 
 function fadeInPictureAt()
 {
-    
+
 }
 </script>
 
 <template>
-    <div id="slideshow_container">
+    <div id="slideshow_container" style="z-index: -1;">
         <div id="slideshow_images" ref="slideshow_images" :style="image_height_style">
             <img class="slideshow_img" v-for="img_path in image_paths" :src="img_path" style="image_hide"
                 alt="Slideshow pictures">

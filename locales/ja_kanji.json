@@ -1,0 +1,21 @@
+{
+    "language": {
+        "en": "英語",
+        "ja_kanji": "日本語 (漢字化)",
+        "zh": "中国語"
+    },
+    "tcc_settings": {
+        "club_name": "電算部活 Turing",
+        "club_slogan": "創意発想を代文で綴る",
+        "creativity_title": "閃いている，鼓動された，革新",
+        "creativity_text": "ここで何かを書いてください。"
+    },
+    "index": {
+        "news_pickup_text": "最新の出来事",
+        "news_pickup_area_description": "電算部はどんな部活ですか? 興味がある方はこちらの出来事をご覧ください。",
+        "member_text": "部員",
+        "advisor_text": "担任の先生からの一言",
+        "advisor_words": "入部して，そしてずっとやりたい項目をやってください。",
+        "join_us_text": "入部希望なら"
+    }
+}

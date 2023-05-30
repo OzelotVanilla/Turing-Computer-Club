@@ -1,0 +1,21 @@
+{
+    "language": {
+        "en": "English",
+        "ja_kanji": "Japanese (Character Preferred)",
+        "zh": "Chinese"
+    },
+    "tcc_settings": {
+        "club_name": "Turing Computer Club",
+        "club_slogan": "The Creativity with the topping of Code.",
+        "creativity_title": "Inspired, Motivated, Innovation",
+        "creativity_text": "Sample text."
+    },
+    "index": {
+        "news_pickup_text": "News Pick-up",
+        "news_pickup_area_description": "You can know more about our club here. See the recent news!",
+        "member_text": "Members",
+        "advisor_text": "Advisor's Words",
+        "advisor_words": "Join the club and do the project that you really want to do.",
+        "join_us_text": "Join Us"
+    }
+}

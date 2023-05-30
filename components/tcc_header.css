@@ -8,9 +8,8 @@
     top: 0px;
 
     height: 60px;
-    width: 100%;
 
-    padding: max(1vh, 15px) 0px;
+    padding: max(1vh, 15px) 2vmin;
 }
 
 #tcc_icon_and_text
@@ -75,9 +74,8 @@
 
 #lang_list
 {
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
+    width: 10vmin;
+    margin-left: 5vmin;
 }
 
 .lang_option_text

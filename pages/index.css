@@ -23,9 +23,13 @@ main > *
 #slideshow_area
 {
     position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    /* The header will not be covered by the slideshow area by set it to -1. */
+    z-index: -1;
 }
 
 #slideshow_hover_text

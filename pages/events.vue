@@ -14,9 +14,6 @@ export default {
 
 <template>
     <div class="website_container">
-        <nav>
-            <tcc_header />
-        </nav>
-        <tcc_footer />
+
     </div>
 </template>

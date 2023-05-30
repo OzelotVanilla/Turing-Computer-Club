@@ -4,36 +4,41 @@
 </style>
 
 <script lang="ts">
-import page_list from "~/assets/tcc_setting/website_structure"
-import club_text_db from "~/assets/tcc_setting/tcc_text"
-import { lang, lang_list } from "~/assets/i18n.vue"
-import i18n from "~/assets/i18n.vue"
+import { lang_list } from "~/assets/i18n"
+
+interface TCCPage
+{
+    name: string
+    path: string
+    description?: string
+    subpage?: TCCPage[]
+}
+
+let website_structure: TCCPage[] = [
+    { name: "News", path: "/news" },
+    { name: "Events", path: "/events" },
+    { name: "About Us", path: "/about" },
+]
 
 export default {
-    components: {
-        i18n
-    },
     props: {
         lang_selected: String
     },
-    emits: [
-        "update:lang_selected"
-    ],
     data()
     {
         return {
-            page_list,
-            app_lang: lang,
-            club_text: club_text_db[lang]!,
+            page_list: website_structure,
             lang_list
         }
     },
-    methods: {
-        onLangChanged(event: MouseEvent)
+    methods:
+    {
+        updateLanguageSettings()
         {
-            const new_lang = lang_list.get((event.target as HTMLLIElement).innerText)!
-            this.$emit('update:lang_selected', new_lang)
-            this.club_text = club_text_db[new_lang]!
+            if (process.client)
+            {
+                localStorage.setItem("app_lang", this.$i18n.locale)
+            }
         }
     }
 }
@@ -48,7 +53,7 @@ export default {
             </div>
             <div class="vertical_line"></div>
             <div id="tcc_text">
-                <NuxtLink to="/">{{ club_text.club_name }}</NuxtLink>
+                <NuxtLink to="/">{{ $t("tcc_settings.club_name") }}</NuxtLink>
             </div>
         </div>
         <div id="menu_and_search_bar">
@@ -57,13 +62,10 @@ export default {
                     <NuxtLink :to="page.path" class="page_nav_text">{{ page.name }}</NuxtLink>
                 </li>
             </ul>
-            　<div id="lang_select">
-                <ul id="lang_list">
-                    <li v-for="lang_name in lang_list.keys()" class="lang_option_text" @click="onLangChanged($event)">
-                        {{ lang_name }}
-                    </li>
-                    <!-- <i18n :lang_selected="" /> -->
-                </ul>
+            <div id="lang_select">
+                <select name="lang_list" id="lang_list" v-model="$i18n.locale" @change="updateLanguageSettings">
+                    <option v-for="lang_name in lang_list" :value="lang_name">{{ $t(`language.${lang_name}`) }}</option>
+                </select>
             </div>
         </div>
     </div>

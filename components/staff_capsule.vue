@@ -15,7 +15,7 @@ export default {
     },
     data()
     {
-        if (this.staff_id == undefined) { console.error("Must set a valid staff id.") }
+        if (this.staff_id == undefined) { throw TypeError("Must set a valid staff id, cannot be empty.") }
 
         const empty_staff_info: StaffCapsuleInfo = {
             name: "",
@@ -48,7 +48,15 @@ export default {
         async getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleInfo>
         {
             const { data } = await useFetch(`/api/staff?id=${staff_id}`)
-            return JSON.parse(data.value!)
+
+            if (data.value != null)
+            {
+                return JSON.parse(data.value)
+            }
+            else
+            {
+                throw URIError(`The queried staff with id "${staff_id}" cannot be found.`)
+            }
         }
     }
 }

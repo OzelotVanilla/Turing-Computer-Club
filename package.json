@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "@types/marked": "^5.0.0",
-    "@types/node": "^18",
-    "nuxt": "^3.4.3"
+    "@types/node": "^18.16.16",
+    "nuxt": "^3.5.2",
+    "vue-i18n": "9.3.0-beta.17"
   },
   "dependencies": {
-    "marked": "^5.0.2"
+    "marked": "^5.0.3",
+    "marked-gfm-heading-id": "^3.0.3",
+    "marked-mangle": "^1.0.1"
   }
 }
