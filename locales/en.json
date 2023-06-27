@@ -17,5 +17,14 @@
         "advisor_text": "Advisor's Words",
         "advisor_words": "Join the club and do the project that you really want to do.",
         "join_us_text": "Join Us"
+    },
+    "news_page": {
+        "title": "Recent News"
+    },
+    "events_page": {
+        "title": "Recents Events"
+    },
+    "about_us_page": {
+        "title": "About Us"
     }
 }

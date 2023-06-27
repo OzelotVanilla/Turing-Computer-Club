@@ -17,5 +17,14 @@
         "advisor_text": "担任の先生からの一言",
         "advisor_words": "入部して，そしてずっとやりたい項目をやってください。",
         "join_us_text": "入部希望なら"
+    },
+    "news_page": {
+        "title": "最近の出来事"
+    },
+    "events_page": {
+        "title": "最近の活動"
+    },
+    "about_us_page": {
+        "title": "私たちについて"
     }
 }
