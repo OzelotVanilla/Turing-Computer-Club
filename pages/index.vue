@@ -31,9 +31,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 @import "~/assets/style/common.css";
-@import "./index.css";
+@import "./index.less";
 </style>
 
 <template>
