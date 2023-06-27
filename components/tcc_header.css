@@ -72,10 +72,17 @@
     color: #007bbb;
 }
 
+/* A `select` element, contains options of language. */
 #lang_list
 {
     width: 10vmin;
+    height: 1.5rem;
     margin-left: 5vmin;
+
+    border: none;
+
+    font-size: 1rem;
+    font-family: "Roboto";
 }
 
 .lang_option_text
