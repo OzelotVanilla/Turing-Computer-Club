@@ -16,7 +16,8 @@
         "member_text": "部員",
         "advisor_text": "担任の先生からの一言",
         "advisor_words": "入部して，そしてずっとやりたい項目をやってください。",
-        "join_us_text": "入部希望なら"
+        "join_us_text": "入部希望なら",
+        "how_to_join": ""
     },
     "news_page": {
         "title": "最近の出来事"

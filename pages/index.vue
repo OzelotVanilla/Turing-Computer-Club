@@ -12,6 +12,17 @@ const images_path_for_slideshow: string[] = [
     "/image/slideshow/Ghk_Building_from_Lake.jpg"
 ]
 
+/**
+ * ID of the staff who is willing to show themselves in the homepage.
+ */
+const staff_to_show = [
+    "ozelotvanilla",
+    "ozelotvanilla",
+    "ozelotvanilla",
+    "ozelotvanilla",
+    "ozelotvanilla"
+]
+
 
 export default {
     components: {
@@ -26,12 +37,18 @@ export default {
     {
         return {
             slideshow_pics: images_path_for_slideshow,
+            staff_to_show_id: staff_to_show
         }
     }
 }
 </script>
 
-<style lang="less" scoped>
+<script setup lang="ts">
+import { marked } from "marked"
+marked.setOptions({ mangle: false, headerIds: false })
+</script>
+
+<style scoped>
 @import "~/assets/style/common.css";
 @import "./index.less";
 </style>
@@ -56,9 +73,8 @@ export default {
             <div id="staff_showcase" class="flex_col">
                 <h1 class="section_title">{{ $t("index.member_text") }}</h1>
                 <div class="flex_row" id="staff_list">
-                    <staff_capsule staff_id="ozelotvanilla" />
-                    <staff_capsule staff_id="ozelotvanilla" />
-                    <staff_capsule staff_id="ozelotvanilla" />
+                    <staff_capsule v-for="staff_id in staff_to_show_id" :staff_id="staff_id"
+                        style="flex-shrink: 0;" />
                 </div>
             </div>
             <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
@@ -86,7 +102,11 @@ export default {
             </div>
             <div id="join_us">
                 <h1 class="section_title">{{ $t("index.join_us_text") }}</h1>
-
+                <div class="flex_row">
+                    <div v-html="marked($t('index.how_to_join'))"></div>
+                    <img src="/image/slideshow/SLAC_East_Entrance.jpg" alt="Join Us Pic"
+                        style="width: 40vw; margin-left: auto;" />
+                </div>
             </div>
         </main>
     </div>

@@ -96,6 +96,7 @@ export default {
     width: var(--frame-width);
     max-height: calc(var(--frame-width) * 1.5);
     padding: max(3vh, 45px) 0px;
+    margin: var(--shadow-offset-distance) 0px;
 
     background-color: #f3f3f3;
     border-radius: var(--border-radius-size);
@@ -119,6 +120,8 @@ export default {
 #self_intro
 {
     align-items: center;
+    gap: 0.8vmin;
+    overflow: hidden;
 }
 
 #self_intro > p
