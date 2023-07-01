@@ -64,11 +64,10 @@ export default {
 
 <template>
     <div id="staff_capsule_frame" class="flex_col">
-        <img id="staff_icon" :src="staff_info.icon_path" alt="Staff Icon" />
-        <!-- <div id="staff_icon"></div> -->
-        <h1>{{ staff_info.name }}</h1>
+        <img :id="`staff_icon_${staff_id}`" class="staff_icon" :src="staff_info.icon_path" alt="Staff Icon" />
+        <h1 class="staff_name">{{ staff_info.name }}</h1>
         <h4>{{ staff_info.major }}</h4>
-        <div id="self_intro" class="flex_col">
+        <div :id="`staff_self_intro_${staff_id}`" class="flex_col staff_self_intro">
             <p v-for="paragraph in staff_info.self_introduction.split('\n')">{{ paragraph }}</p>
         </div>
     </div>
@@ -109,7 +108,12 @@ export default {
     box-shadow: 0px 0px var(--shadow-offset-distance) 0px #7b7c7d;
 }
 
-#staff_icon
+.staff_name
+{
+    text-align: center;
+}
+
+.staff_icon
 {
     width: max(6vw, 80px);
     height: max(6vw, 80px);
@@ -117,18 +121,17 @@ export default {
     border-radius: 50%;
 }
 
-#self_intro
+.staff_self_intro
 {
     align-items: center;
     gap: 0.8vmin;
     overflow: hidden;
 }
 
-#self_intro > p
+.staff_self_intro > p
 {
     margin-top: 5%;
     width: 80%;
-    max-height: 40%;
 
     text-indent: 2rem;
     text-align: justify;
