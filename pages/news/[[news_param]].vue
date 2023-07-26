@@ -2,10 +2,10 @@
 import NewsOverview from "./overview.vue"
 
 const route_info = useRoute()
-const { news_id_param } = route_info.params
+const {  news_param } = route_info.params
 let news_id: string
-if (news_id_param instanceof Array) { news_id = news_id_param.join() }
-else { news_id = news_id_param ?? "" }
+if (news_param instanceof Array) { news_id = news_param.join() }
+else { news_id = news_param ?? "" }
 </script>
 
 <style scoped>
