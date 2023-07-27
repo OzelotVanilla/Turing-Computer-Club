@@ -49,7 +49,7 @@ marked.setOptions({ mangle: false, headerIds: false })
 </script>
 
 <style scoped>
-@import "~/assets/style/common.css";
+@import "~/assets/style/common.less";
 @import "./index.less";
 </style>
 

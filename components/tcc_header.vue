@@ -1,6 +1,6 @@
 <style scoped>
-@import "~/assets/style/common.css";
-@import "./tcc_header.css";
+@import "~/assets/style/common.less";
+@import "./tcc_header.less";
 </style>
 
 <script lang="ts">

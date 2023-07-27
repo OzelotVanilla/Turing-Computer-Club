@@ -9,7 +9,7 @@ else { events_id = events_param ?? "" }
 </script>
 
 <style scoped>
-@import "~/assets/style/common.css";
+@import "~/assets/style/common.less";
 </style>
 
 <template>

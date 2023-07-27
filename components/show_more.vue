@@ -18,5 +18,5 @@ export default {
 </template>
 
 <style scoped>
-@import "~/assets/style/common.css";
+@import "~/assets/style/common.less";
 </style>

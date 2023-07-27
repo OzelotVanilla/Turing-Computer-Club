@@ -24,15 +24,14 @@
     font-family: "Raleway";
     font-weight: 400;
     font-size: 1.2em;
-}
 
-#tcc_icon_and_text > *,
-#tcc_icon_and_text img
-{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    > *, img
+    {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 
 #menu_and_search_bar
@@ -41,19 +40,19 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-}
 
-#menu_and_search_bar > #menu_of_page_nav
-{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 5vw;
-    list-style-type: none;
-    padding: 0px;
+    > #menu_of_page_nav
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 5vw;
+        list-style-type: none;
+        padding: 0px;
 
-    font-size: 1.1em;
+        font-size: 1.1em;
+    }
 }
 
 .page_nav_text
@@ -65,11 +64,11 @@
     font-weight: 400;
 
     transition: all 0.3s;
-}
 
-.page_nav_text:hover
-{
-    color: #007bbb;
+    &:hover
+    {
+        color: #007bbb;
+    }
 }
 
 /* A `select` element, contains options of language. */
@@ -90,10 +89,11 @@
 
     font-size: 1rem;
     font-family: "Roboto";
-}
 
-#lang_list:hover {
-  cursor: pointer;
+    &:hover
+    {
+        cursor: pointer;
+    }
 }
 
 .lang_option_text
@@ -105,10 +105,10 @@
     font-weight: 400;
 
     transition: all 0.3s;
-}
 
-.lang_option_text:hover
-{
-    color: #c7b370;
-    cursor: pointer;
+    &:hover
+    {
+        color: #c7b370;
+        cursor: pointer;
+    }
 }
