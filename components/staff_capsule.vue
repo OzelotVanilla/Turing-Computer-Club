@@ -1,4 +1,5 @@
-<script lang="ts">
+<script setup lang="ts">
+import { fallback_lang } from "assets/i18n";
 import { StaffInfo, StudentMajor } from "~/assets/staff/StaffInfo"
 
 interface StaffCapsuleInfo extends StaffInfo
@@ -7,59 +8,32 @@ interface StaffCapsuleInfo extends StaffInfo
 }
 
 const dir_of_fallback_icon = "_nuxt/assets/staff/fallback_icon.jpg"
-
-export default {
-    props: {
-        staff_id: String,
-        lang_selected: String
-    },
-    data()
-    {
-        if (this.staff_id == undefined) { throw TypeError("Must set a valid staff id, cannot be empty.") }
-
-        const empty_staff_info: StaffCapsuleInfo = {
-            name: "",
-            self_introduction: "",
-            major: StudentMajor.computer_science,
-            icon_path: dir_of_fallback_icon
-        }
-
-        return {
-            staff_info: empty_staff_info
-        }
-    },
-    created()
-    {
-        this.updateStaffInfo()
-    },
-    methods: {
-        updateStaffInfo()
-        {
-            this.getStaffInfo(this.staff_id?.toLocaleLowerCase()).then(
-                (info_got) =>
-                {
-                    this.staff_info.name = info_got.name
-                    this.staff_info.major = info_got.major
-                    this.staff_info.self_introduction = info_got.self_introduction
-                    this.staff_info.icon_path = info_got.icon_path ?? dir_of_fallback_icon
-                }
-            )
-        },
-        async getStaffInfo(staff_id: string | undefined): Promise<StaffCapsuleInfo>
-        {
-            const { data } = await useFetch(`/api/staff?id=${staff_id}`)
-
-            if (data.value != null)
-            {
-                return JSON.parse(data.value)
-            }
-            else
-            {
-                throw URIError(`The queried staff with id "${staff_id}" cannot be found.`)
-            }
-        }
-    }
+const empty_staff_info: StaffCapsuleInfo = {
+    name: "",
+    self_introduction: "",
+    major: StudentMajor.computer_science,
+    icon_path: dir_of_fallback_icon
 }
+
+let props = defineProps<{
+    staff_id: string
+}>()
+
+if (props.staff_id == undefined) { throw TypeError("Must set a valid staff id, cannot be empty.") }
+
+let staff_info: StaffCapsuleInfo = empty_staff_info;
+const { data } = await useFetch(`/api/staff?id=${props.staff_id}`)
+
+if (data.value != null)
+{
+    staff_info = JSON.parse(data.value)
+    if (staff_info.icon_path == null) { staff_info.icon_path = dir_of_fallback_icon }
+}
+else
+{
+    throw URIError(`The queried staff with id "${props.staff_id}" cannot be found.`)
+}
+
 </script>
 
 <template>
