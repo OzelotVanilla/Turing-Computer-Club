@@ -7,16 +7,14 @@ export default defineNuxtPlugin(
     ({ vueApp }) =>
     {
         const fallback_lang = "en"
-        let app_lang = fallback_lang
-        if (process.client)
-        {
-            app_lang = localStorage.getItem("app_lang") ?? "en"
-        }
+        let app_lang = useCookie("app_lang")
+        app_lang.value = app_lang.value ?? fallback_lang
+        // console.log(`User read cookie app_lang "${app_lang.value}"`);
 
         const i18n = createI18N({
             legacy: false,
             globalInjection: true,
-            locale: app_lang,
+            locale: app_lang.value,
             fallbackLocale: fallback_lang,
             messages: {
                 en: en_translation,

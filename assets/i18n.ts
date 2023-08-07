@@ -14,3 +14,5 @@ export type Translated<ObjectToBeTranslated> = {
 }
 
 export let lang_list: LanguageAvailable[] = ["en", "ja_kanji", "zh"]
+
+export const fallback_lang: keyof LanguageOption = "en"
