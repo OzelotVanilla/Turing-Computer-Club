@@ -36,7 +36,7 @@ export default defineEventHandler(
 
             return JSON.stringify(result)
         }
-        else// Project does not exists
+        else // Project does not exists
         {
             return JSON.stringify({ error: "No such project, or corrupted meta file." })
         }

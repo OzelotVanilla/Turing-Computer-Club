@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { fallback_lang } from "assets/i18n";
 import { StaffInfo, StudentMajor } from "~/assets/staff/StaffInfo"
 
 interface StaffCapsuleInfo extends StaffInfo
