@@ -8,7 +8,7 @@ export default defineEventHandler(
     {
         const params = getQuery(event)
         const news_id = params.id as string
-        const user_desired_lang = (params.lang ?? "") as string
+        const user_desired_lang = getCookie(event, "app_lang") as string
         const news_path = `${news_dir_path}/${news_id}`
         const news_content_path = `${news_path}`
 
