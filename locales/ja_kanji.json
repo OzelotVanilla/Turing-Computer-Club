@@ -10,6 +10,11 @@
         "creativity_title": "閃いている，鼓動された，革新",
         "creativity_text": "ここで何かを書いてください。"
     },
+    "tabs": {
+        "news": "出来事",
+        "events": "行事",
+        "about_us": "私たちについて"
+    },
     "index": {
         "news_pickup_text": "最新の出来事",
         "news_pickup_area_description": "電算部はどんな部活ですか? 興味がある方はこちらの出来事をご覧ください。",

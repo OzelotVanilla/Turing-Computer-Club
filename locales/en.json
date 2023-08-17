@@ -10,6 +10,11 @@
         "creativity_title": "Inspired, Motivated, Innovation",
         "creativity_text": "Sample text."
     },
+    "tabs": {
+        "news": "News",
+        "events": "Events",
+        "about_us": "About Us"
+    },
     "index": {
         "news_pickup_text": "News Pick-up",
         "news_pickup_area_description": "You can know more about our club here. See the recent news!",

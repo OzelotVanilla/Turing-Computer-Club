@@ -5,10 +5,15 @@
         "zh": "Chinese"
     },
     "tcc_settings": {
-        "club_name": "Turing Computer Club",
+        "club_name": "图灵计算机社",
         "club_slogan": "The Creativity with the topping of Code.",
         "creativity_title": "Inspired, Motivated, Innovation",
         "creativity_text": "Sample text."
+    },
+    "tabs": {
+        "news": "新闻",
+        "events": "活动",
+        "about_us": "关于我们"
     },
     "index": {
         "news_pickup_text": "News Pick-up",

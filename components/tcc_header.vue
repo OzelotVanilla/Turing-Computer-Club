@@ -9,17 +9,12 @@ import { fallback_lang, lang_list } from "~/assets/i18n"
 
 interface TCCPage
 {
-    name: string
+    name?: string
+    getName?: () => string
     path: string
     description?: string
     subpage?: TCCPage[]
 }
-
-let website_structure: TCCPage[] = [
-    { name: "News", path: "/news" },
-    { name: "Events", path: "/events" },
-    { name: "About Us", path: "/about" },
-]
 
 const { t, locale } = useI18n()
 let lang_selected = useCookie("app_lang")
@@ -29,50 +24,13 @@ function updateLanguageSettings()
     locale.value = lang_selected.value ?? fallback_lang
     // console.log(`Now user changes cookie value of app_lang to ${lang_selected.value}`)
 }
-</script>
-
-<!-- <script lang="ts">
-import { lang_list } from "~/assets/i18n"
-
-interface TCCPage
-{
-    name: string
-    path: string
-    description?: string
-    subpage?: TCCPage[]
-}
 
 let website_structure: TCCPage[] = [
-    { name: "News", path: "/news" },
-    { name: "Events", path: "/events" },
-    { name: "About Us", path: "/about" },
+    { getName: () => t("tabs.news"), path: "/news" },
+    { getName: () => t("tabs.events"), path: "/events" },
+    { getName: () => t("tabs.about_us"), path: "/about" },
 ]
-
-export default {
-    props: {
-        lang_selected: String
-    },
-    data()
-    {
-        return {
-            page_list: website_structure,
-            lang_list
-        }
-    },
-    methods:
-    {
-        updateLanguageSettings()
-        {
-            if (process.client)
-            {
-                // localStorage.setItem("app_lang", this.$i18n.locale)
-
-            }
-        }
-    }
-}
-
-</script> -->
+</script>
 
 <template>
     <div id="tcc_header_frame" class="flex_row">
@@ -88,7 +46,9 @@ export default {
         <div id="menu_and_search_bar">
             <ul id="menu_of_page_nav">
                 <li v-for="page in website_structure">
-                    <NuxtLink :to="page.path" class="page_nav_text">{{ page.name }}</NuxtLink>
+                    <NuxtLink :to="page.path" class="page_nav_text">
+                        {{ page.getName != undefined ? page.getName() : (page.name ?? "") }}
+                    </NuxtLink>
                 </li>
             </ul>
             <div id="lang_select">
