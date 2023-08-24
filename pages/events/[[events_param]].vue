@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import EventOverview from "./overview.vue"
+import EventPage from "./article.vue"
 
 const route_info = useRoute()
 const { events_param } = route_info.params
@@ -17,6 +18,6 @@ else { events_id = events_param ?? "" }
         <EventOverview />
     </div>
     <div class="website_container" v-else>
-
+        <EventPage :events_id="events_id" />
     </div>
 </template>

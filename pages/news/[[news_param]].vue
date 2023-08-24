@@ -14,10 +14,10 @@ else { news_id = news_param ?? "" }
 </style>
 
 <template>
-    <div v-if="news_id.trim().length == 0">
+    <div class="website_container" v-if="news_id.trim().length == 0">
         <NewsOverview />
     </div>
-    <div v-else>
+    <div class="website_container" v-else>
         <NewsArticle :news_id="news_id" />
     </div>
 </template>
