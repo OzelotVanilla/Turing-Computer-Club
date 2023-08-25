@@ -19,10 +19,10 @@ export default defineEventHandler(
         if (isExists(staff_path))
         {
             let staff_info = JSON.parse(readFileSync(json_file_to_read, "utf-8"))
-            const possible_icon_path = `${staff_path}/icon.jpg`
+            const possible_icon_path = `${staff_path}/avatar.jpg`
             if (isExists(possible_icon_path))
             {
-                staff_info.icon_path = possible_icon_path
+                staff_info.icon_path = `_nuxt/${possible_icon_path}`
             }
             else
             {

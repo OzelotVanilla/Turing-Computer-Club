@@ -73,15 +73,15 @@ marked.setOptions({ mangle: false, headerIds: false })
             <div id="staff_showcase" class="flex_col">
                 <h1 class="section_title">{{ $t("index.member_text") }}</h1>
                 <div class="flex_row" id="staff_list">
-                    <staff_capsule v-for="staff_id in staff_to_show_id" :staff_id="staff_id"
-                        style="flex-shrink: 0;" />
+                    <staff_capsule v-for="staff_id in staff_to_show_id" :staff_id="staff_id" style="flex-shrink: 0;" />
                 </div>
             </div>
             <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
                 <h1 class="section_title">{{ $t("index.advisor_text") }}</h1>
-                <div class="flex_row" style="gap: 5vw;">
-                    <staff_capsule staff_id="hemnbarzanabdalla" />
-                    <p>{{ $t("index.advisor_words") }}</p>
+                <div class="flex_row" style="gap: 5vw; flex-wrap: wrap;">
+                    <staff_capsule style="flex: 1;" staff_id="hemnbarzanabdalla" />
+                    <div class="markdown_article_container_in_page" style="flex: 2;"
+                        v-html="marked($t('index.advisor_words'))"></div>
                 </div>
             </div>
             <div id="news_showcase">
