@@ -13,6 +13,7 @@
     "tabs": {
         "news": "News",
         "events": "Events",
+        "project": "Project",
         "about_us": "About Us"
     },
     "index": {

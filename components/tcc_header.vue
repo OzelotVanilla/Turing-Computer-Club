@@ -28,6 +28,7 @@ function updateLanguageSettings()
 let website_structure: TCCPage[] = [
     { getName: () => t("tabs.news"), path: "/news" },
     { getName: () => t("tabs.events"), path: "/events" },
+    { getName: () => t("tabs.project"), path: "/project" },
     { getName: () => t("tabs.about_us"), path: "/about" },
 ]
 </script>
@@ -52,8 +53,7 @@ let website_structure: TCCPage[] = [
                 </li>
             </ul>
             <div id="lang_select">
-                <select name="lang_list" id="lang_list"
-                    v-model="lang_selected" @change="updateLanguageSettings">
+                <select name="lang_list" id="lang_list" v-model="lang_selected" @change="updateLanguageSettings">
                     <option v-for="lang_name in lang_list" :value="lang_name" class="lang_option_text">
                         {{ t(`language.${lang_name}`) }}
                     </option>
