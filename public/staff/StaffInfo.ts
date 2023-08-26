@@ -1,4 +1,4 @@
-import { LanguageAvailable } from "../i18n"
+import { LanguageAvailable } from "../../assets/i18n"
 
 export type StaffInfo =
     {

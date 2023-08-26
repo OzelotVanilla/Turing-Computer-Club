@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { StaffInfo, StudentMajor } from "~/assets/staff/StaffInfo"
+import { StaffInfo, StudentMajor } from "~/public/staff/StaffInfo"
 
 interface StaffCapsuleInfo extends StaffInfo
 {
     icon_path: string
 }
 
-const dir_of_fallback_icon = "_nuxt/assets/staff/fallback_icon.jpg"
+const dir_of_fallback_icon = "/staff/fallback_icon.jpg"
 const empty_staff_info: StaffCapsuleInfo = {
     name: "",
     self_introduction: "",
@@ -110,4 +110,4 @@ else
     text-align: justify;
     text-overflow: ellipsis;
 }
-</style>
+</style>public/staff/StaffInfo

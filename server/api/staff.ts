@@ -1,6 +1,6 @@
 import { readFileSync, existsSync as isExists } from "fs"
 
-const dir_of_staff = "assets/staff"
+const dir_of_staff = "public/staff"
 
 export default defineEventHandler(
     function (event)
@@ -22,7 +22,7 @@ export default defineEventHandler(
             const possible_icon_path = `${staff_path}/avatar.jpg`
             if (isExists(possible_icon_path))
             {
-                staff_info.icon_path = `_nuxt/${possible_icon_path}`
+                staff_info.icon_path = `${possible_icon_path.replace(/^public/, "")}`
             }
             else
             {
