@@ -2,7 +2,7 @@
 import { marked } from 'marked';
 
 const props = defineProps<{
-    project_id: string
+    project_id?: string
 }>()
 marked.setOptions({ mangle: false, headerIds: false })
 
@@ -12,6 +12,7 @@ let app_lang = useCookie("app_lang")
 
 const updateContent = async () =>
 {
+    if (props.project_id == undefined) { return }
     console.log(`updating project ${props.project_id} with app_lang ${app_lang.value}`)
     const { data } = await useFetch(`/api/project`, { method: "POST", query: { id: props.project_id } })
     const response = data.value!

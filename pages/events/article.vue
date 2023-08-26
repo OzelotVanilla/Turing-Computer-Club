@@ -4,7 +4,7 @@ import "~/assets/style/common.less"
 marked.setOptions({ mangle: false, headerIds: false })
 
 const props = defineProps<{
-    events_id: string
+    events_id?: string
 }>()
 
 let md_to_show = ref("")
@@ -13,6 +13,7 @@ let app_lang = useCookie("app_lang")
 
 const updateContent = async () =>
 {
+    if (props.events_id == undefined) { return }
     console.log(`updating news ${props.events_id} with app_lang ${app_lang.value}`)
     const { data } = await useFetch(`/api/events`, { method: "POST", query: { id: props.events_id } })
     const response = data.value!
