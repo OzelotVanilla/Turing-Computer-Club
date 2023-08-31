@@ -4,7 +4,7 @@ import tcc_footer from "components/tcc_footer.vue"
 import slideshow from "components/slideshow.vue"
 import colored_squares from "components/colored_squares.vue"
 import news_capsule from "components/news_capsule.vue"
-import staff_capsule from "components/staff_capsule.vue"
+import staff_capsule from "components/StaffCapsule/staff_capsule.vue"
 
 
 const images_path_for_slideshow: string[] = [
@@ -73,13 +73,17 @@ marked.setOptions({ mangle: false, headerIds: false })
             <div id="staff_showcase" class="flex_col">
                 <h1 class="section_title">{{ $t("index.member_text") }}</h1>
                 <div class="flex_row" id="staff_list">
-                    <staff_capsule v-for="staff_id in staff_to_show_id" :staff_id="staff_id" style="flex-shrink: 0;" />
+                    <NuxtErrorBoundary>
+                        <staff_capsule v-for="staff_id in staff_to_show_id" :staff_id="staff_id" style="flex-shrink: 0;" />
+                    </NuxtErrorBoundary>
                 </div>
             </div>
             <div id="words_from_advisor" class="flex_col" style="gap: 4vh">
                 <h1 class="section_title">{{ $t("index.advisor_text") }}</h1>
                 <div class="flex_row" style="gap: 5vw; flex-wrap: wrap;">
-                    <staff_capsule style="flex: 1;" staff_id="hemnbarzanabdalla" />
+                    <NuxtErrorBoundary>
+                        <staff_capsule style="flex: 1;" staff_id="hemnbarzanabdalla" />
+                    </NuxtErrorBoundary>
                     <div class="markdown_article_container_in_page" style="flex: 2;"
                         v-html="marked($t('index.advisor_words'))"></div>
                 </div>

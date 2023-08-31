@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { StaffInfo, StudentMajor } from "~/public/staff/StaffInfo"
+import { StaffInfo, StudentMajor } from "./StaffInfo"
 
 interface StaffCapsuleInfo extends StaffInfo
 {
@@ -110,4 +110,4 @@ else
     text-align: justify;
     text-overflow: ellipsis;
 }
-</style>public/staff/StaffInfo
+</style>public/staff/StaffInfocomponents/StaffCapsule/StaffInfo
